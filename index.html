@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API 充值與收入記錄</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">私人記錄面板</p>
+        <h1>API 充值與收入記錄</h1>
+        <p class="subtitle">只做展示，不做編輯。把目前 API 賬本與充值記錄集中顯示，方便你之後直接看總覽與明細。</p>
+      </div>
+      <div class="hero-note">
+        <span>資料來源</span>
+        <strong>API 賬本 + 充值記錄</strong>
+      </div>
+    </section>
+
+    <section class="cards">
+      <article class="card income"><span>總收入</span><strong id="total-income">—</strong></article>
+      <article class="card expense"><span>總支出</span><strong id="total-expense">—</strong></article>
+      <article class="card refund"><span>總退款</span><strong id="total-refund">—</strong></article>
+      <article class="card net"><span>淨額</span><strong id="total-net">—</strong></article>
+    </section>
+
+    <section class="panel grid-two">
+      <div>
+        <div class="panel-head">
+          <h2>篩選</h2>
+          <span id="record-count">—</span>
+        </div>
+        <div class="filters">
+          <input id="search-input" type="text" placeholder="搜平台、日期、備註…" />
+          <select id="type-filter">
+            <option value="">全部類型</option>
+            <option value="income">收入</option>
+            <option value="expense">支出</option>
+            <option value="refund">退款</option>
+            <option value="recharge">充值</option>
+            <option value="setup">初始化</option>
+          </select>
+          <select id="source-filter">
+            <option value="">全部來源</option>
+            <option value="api_ledger">API 賬本</option>
+            <option value="recharge_log">充值記錄</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div class="panel-head">
+          <h2>原幣小計</h2>
+        </div>
+        <ul id="currency-breakdown" class="currency-list"></ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>全部明細</h2>
+        <span>按日期倒序</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>平台 / 來源</th>
+              <th>類型</th>
+              <th>原幣金額</th>
+              <th>幣種</th>
+              <th>RMB 折算</th>
+              <th>資料源</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody id="records-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
