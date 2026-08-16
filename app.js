@@ -1,16 +1,68 @@
 const ledgerData = [
   {
-    "date": "2026-07-14",
-    "platform_or_source": "ishfca.top",
+    "date": "2026-08-14",
+    "platform_or_source": "Rex",
+    "type": "income",
+    "amount": "150",
+    "currency": "HKD",
+    "rmb_rate": "0.85932",
+    "rmb_amount": "128.90",
+    "payment_method_or_source": "-",
+    "note": "使用者補錄；按查得最近可用匯率（API 回傳日期 2026-08-13）換算",
+    "source_set": "api_ledger",
+    "display_type": "income"
+  },
+  {
+    "date": "2026-08-14",
+    "platform_or_source": "cch",
     "type": "expense",
-    "amount": "20",
-    "currency": "",
-    "rmb_rate": "",
-    "rmb_amount": "",
-    "payment_method_or_source": "",
-    "note": "今天充多了20",
-    "display_type": "recharge",
-    "source_set": "recharge_log"
+    "amount": "100",
+    "currency": "RMB",
+    "rmb_rate": "1",
+    "rmb_amount": "100",
+    "payment_method_or_source": "-",
+    "note": "使用者補錄；充值按支出記錄",
+    "source_set": "api_ledger",
+    "display_type": "expense"
+  },
+  {
+    "date": "2026-08-12",
+    "platform_or_source": "Rex",
+    "type": "income",
+    "amount": "150",
+    "currency": "HKD",
+    "rmb_rate": "0.85933",
+    "rmb_amount": "128.90",
+    "payment_method_or_source": "-",
+    "note": "使用者補錄；按交易日匯率換算",
+    "source_set": "api_ledger",
+    "display_type": "income"
+  },
+  {
+    "date": "2026-08-12",
+    "platform_or_source": "cch",
+    "type": "expense",
+    "amount": "50",
+    "currency": "RMB",
+    "rmb_rate": "1",
+    "rmb_amount": "50",
+    "payment_method_or_source": "-",
+    "note": "使用者補錄；充值按支出記錄",
+    "source_set": "api_ledger",
+    "display_type": "expense"
+  },
+  {
+    "date": "2026-07-18",
+    "platform_or_source": "apimart.ai",
+    "type": "expense",
+    "amount": "79.1",
+    "currency": "HKD",
+    "rmb_rate": "0.85",
+    "rmb_amount": "67.58",
+    "payment_method_or_source": "-",
+    "note": "充值",
+    "source_set": "api_ledger",
+    "display_type": "expense"
   },
   {
     "date": "2026-07-09",
@@ -66,12 +118,12 @@ const ledgerData = [
   },
   {
     "date": "2026-06-03",
-    "platform_or_source": "isf",
+    "platform_or_source": "cch",
     "type": "expense",
-    "amount": "20",
+    "amount": "50",
     "currency": "RMB",
     "rmb_rate": "1",
-    "rmb_amount": "20",
+    "rmb_amount": "50",
     "payment_method_or_source": "-",
     "note": "使用者補錄；皆為支出",
     "source_set": "api_ledger",
@@ -79,12 +131,12 @@ const ledgerData = [
   },
   {
     "date": "2026-06-03",
-    "platform_or_source": "cch",
+    "platform_or_source": "isf",
     "type": "expense",
-    "amount": "50",
+    "amount": "20",
     "currency": "RMB",
     "rmb_rate": "1",
-    "rmb_amount": "50",
+    "rmb_amount": "20",
     "payment_method_or_source": "-",
     "note": "使用者補錄；皆為支出",
     "source_set": "api_ledger",
@@ -105,19 +157,6 @@ const ledgerData = [
   },
   {
     "date": "2026-05-23",
-    "platform_or_source": "cch",
-    "type": "expense",
-    "amount": "80",
-    "currency": "RMB",
-    "rmb_rate": "1",
-    "rmb_amount": "80",
-    "payment_method_or_source": "-",
-    "note": "使用者補錄；皆為支出",
-    "source_set": "api_ledger",
-    "display_type": "expense"
-  },
-  {
-    "date": "2026-05-23",
     "platform_or_source": "Rex",
     "type": "income",
     "amount": "150",
@@ -130,13 +169,13 @@ const ledgerData = [
     "display_type": "income"
   },
   {
-    "date": "2026-05-21",
+    "date": "2026-05-23",
     "platform_or_source": "cch",
     "type": "expense",
-    "amount": "50",
+    "amount": "80",
     "currency": "RMB",
     "rmb_rate": "1",
-    "rmb_amount": "50",
+    "rmb_amount": "80",
     "payment_method_or_source": "-",
     "note": "使用者補錄；皆為支出",
     "source_set": "api_ledger",
@@ -154,6 +193,19 @@ const ledgerData = [
     "note": "使用者補錄",
     "source_set": "api_ledger",
     "display_type": "income"
+  },
+  {
+    "date": "2026-05-21",
+    "platform_or_source": "cch",
+    "type": "expense",
+    "amount": "50",
+    "currency": "RMB",
+    "rmb_rate": "1",
+    "rmb_amount": "50",
+    "payment_method_or_source": "-",
+    "note": "使用者補錄；皆為支出",
+    "source_set": "api_ledger",
+    "display_type": "expense"
   },
   {
     "date": "2026-05-14",
@@ -222,18 +274,19 @@ const ledgerData = [
   }
 ];
 const summaryData = {
-  "expense": 484.31,
-  "income": 380.08,
+  "expense": 701.89,
+  "income": 637.88,
   "refund": 0.0,
-  "net": -104.23
+  "net": -64.01
 };
 const currencyTotals = {
-  "expense|RMB": 375.0,
-  "expense|USD": 1.34,
+  "income|HKD": 623.31,
+  "expense|RMB": 525.0,
+  "expense|HKD": 79.1,
+  "setup|USD": 0.0,
   "expense|EUR": 12.85,
   "income|RMB": 100.0,
-  "income|HKD": 323.31,
-  "setup|USD": 0.0
+  "expense|USD": 1.34
 };
 
 const fmt = (n) => {
